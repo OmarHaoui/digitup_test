@@ -27,11 +27,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
     });
   }
 
-  var chatIcon = svgIcon2('assets/images/chat.svg');
-  var dashIcon = svgIcon2('assets/images/dashboard.svg');
-  var transIcon = svgIcon2('assets/images/trans.svg');
-  var sendIcon = svgIcon2('assets/images/send.svg');
-  var profileIcon = svgIcon2('assets/images/profile.svg');
+  var chatIcon = svgIcon2('assets/images/svg/chat.svg');
+  var dashIcon = svgIcon2('assets/images/svg/dashboard.svg');
+  var transIcon = svgIcon2('assets/images/svg/trans.svg');
+  var sendIcon = svgIcon2('assets/images/svg/send.svg');
+  var profileIcon = svgIcon2('assets/images/svg/profile.svg');
 
   @override
   Widget build(BuildContext context) {
@@ -39,23 +39,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         toolbarHeight: 80,
         backgroundColor: Color(0xfff8f8f8),
-        // title: Text('Profile',
-        //     style: TextStyle(color: Colors.white, fontSize: 20)),
-        // centerTitle: true,
-        // leading: IconButton(
-        //   icon: Icon(Icons.arrow_back, color: Colors.white),
-        //   onPressed: () {
-        //     // Handle navigation to menu
-        //   },
-        // ),
-        // actions: [
-        //   IconButton(
-        //     icon: Icon(Icons.close_rounded, color: Colors.white),
-        //     onPressed: () {
-        //       // Handle navigation to settings
-        //     },
-        //   ),
-        // ],
+        //backgroundColor: Colors.transparent,
         flexibleSpace: ClipPath(
           clipper: ThreePeakWavesClipper(),
           child: Container(
@@ -64,7 +48,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 40.0),
+                  padding: const EdgeInsets.only(top: 35.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -97,7 +81,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
           Expanded(
             child: Column(
               children: [
-                //Image.asset('assets/images/waves.png'),
                 Expanded(
                   child: ListView(
                     children: [
@@ -273,20 +256,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                 right: 0.0,
                                                 left: 0.0,
                                                 child: Center(
-                                                  child: IconButton(
-                                                    style: ButtonStyle(
-                                                        //shape: MaterialStateProperty.all(),//TODO: MAKE BORDER
-                                                        backgroundColor:
-                                                            MaterialStateProperty
-                                                                .all(Colors
-                                                                    .white)),
-                                                    onPressed: () {
-                                                      //TODO: delete the story
-                                                    },
-                                                    icon: Icon(
-                                                      Icons.close_rounded,
-                                                      color: Colors.grey,
-                                                      size: 30.0,
+                                                  child: Container(
+                                                    decoration: BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                      border: Border.all(
+                                                          color: Colors.grey,
+                                                          width: 1.0),
+                                                    ),
+                                                    child: IconButton(
+                                                      style: ButtonStyle(
+                                                          backgroundColor:
+                                                              MaterialStateProperty
+                                                                  .all(Colors
+                                                                      .white)),
+                                                      onPressed: () {
+                                                        //TODO: delete the story
+                                                      },
+                                                      icon: Icon(
+                                                        Icons.close_rounded,
+                                                        color: Colors.grey,
+                                                        size: 30.0,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -451,7 +441,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               onPressed: () {},
                               child: Row(
                                 children: [
-                                  svgIcon('assets/images/MoneyGraph.svg'),
+                                  svgIcon('assets/images/svg/MoneyGraph.svg'),
                                   SizedBox(
                                       width:
                                           8.0), // Add some spacing between icon and text
@@ -532,7 +522,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               onPressed: () {},
                               child: Row(
                                 children: [
-                                  Icon(Icons.logout, color: primaryColor),
+                                  svgIcon('assets/images/svg/logout.svg'),
                                   SizedBox(
                                       width:
                                           8.0), // Add some spacing between icon and text
@@ -560,7 +550,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ],
       ),
       bottomNavigationBar: ConvexAppBar(
-        height: 60,
+        height: 80,
         onTap: _onItemTapped,
         activeColor: Color(0xff133BB7),
         style: TabStyle.react,
