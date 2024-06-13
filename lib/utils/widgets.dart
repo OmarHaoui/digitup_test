@@ -39,4 +39,4 @@ class ThreePeakWavesClipper extends CustomClipper<Path> {
 svgIcon(String path) =>
     SvgPicture.asset(path, width: 20.0, height: 20.0, color: primaryColor);
 svgIcon2(String path) =>
-    SvgPicture.asset(path, width: 50.0, height: 50.0, color: Colors.white);
+    SvgPicture.asset(path, width: 60.0, height: 60.0, color: Colors.white);

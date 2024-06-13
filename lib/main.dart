@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Space Grotesk',
         primaryColor: primaryColor,
       ),
-      home: ProfileScreen(),
+      home: const ProfileScreen(),
     );
   }
 }

@@ -1,19 +1,12 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
-import 'dart:math';
-
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../utils/constants.dart';
 import '../utils/widgets.dart';
 
 class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
+
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
@@ -38,7 +31,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
-        backgroundColor: Color(0xfff8f8f8),
+        backgroundColor: const Color(0xfff8f8f8),
         //backgroundColor: Colors.transparent,
         flexibleSpace: ClipPath(
           clipper: ThreePeakWavesClipper(),
@@ -53,15 +46,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconButton(
-                        icon: Icon(Icons.arrow_back, color: Colors.white),
+                        icon: const Icon(Icons.arrow_back, color: Colors.white),
                         onPressed: () {
                           // Handle navigation to menu
                         },
                       ),
-                      Text('Profile',
+                      const Text('Profile',
                           style: TextStyle(color: Colors.white, fontSize: 20)),
                       IconButton(
-                        icon: Icon(Icons.close_rounded, color: Colors.white),
+                        icon: const Icon(Icons.close_rounded,
+                            color: Colors.white),
                         onPressed: () {
                           // Handle navigation to settings
                         },
@@ -85,16 +79,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   child: ListView(
                     children: [
                       Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(30),
                             bottomRight: Radius.circular(30),
                           ),
                           color: Color(0xffF8F8F8),
                         ),
-                        padding: EdgeInsets.only(top: 10),
+                        padding: const EdgeInsets.only(top: 10),
                         child: Padding(
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                               bottom: 8, left: 8, right: 8, top: 0),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -106,7 +100,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     color: primaryColor,
                                     width: 2.0,
                                   ),
-                                  image: DecorationImage(
+                                  image: const DecorationImage(
                                     image: AssetImage(
                                         'assets/images/profileImage.png'), // Replace with your image path
                                     fit: BoxFit.cover,
@@ -114,24 +108,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         .topCenter, // Aligns the image to the top
                                   ),
                                 ),
-                                child: CircleAvatar(
+                                child: const CircleAvatar(
                                   // Profile picture
                                   radius: 50.0,
                                   backgroundColor: Colors.transparent,
                                 ),
                               ),
-                              SizedBox(width: 16.0),
+                              const SizedBox(width: 16.0),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text(
+                                  const Text(
                                     'Maryam.Bernoussy', // Replace with your name
                                     style: TextStyle(
                                         fontSize: 18.0,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  Row(
+                                  const Row(
                                     children: [
                                       Text('Member since '),
                                       Text('6th March 2024',
@@ -140,8 +134,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     ],
                                   ),
                                   Container(
-                                    margin:
-                                        EdgeInsets.only(top: 5.0, bottom: 10),
+                                    margin: const EdgeInsets.only(
+                                        top: 5.0, bottom: 10),
                                     height: 5,
                                     width: 30,
                                     decoration: BoxDecoration(
@@ -153,7 +147,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   Container(
                                     height: 100,
                                     width: 215,
-                                    child: Text(
+                                    child: const Text(
                                       softWrap: true,
                                       'Insert a mini bio below. Share a snippet about yourself—interests, background, or achievements—to give others a quick glimpse of who you are.',
                                       style: TextStyle(
@@ -163,7 +157,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   ),
                                   IconButton(
                                     onPressed: () {},
-                                    icon: Icon(Icons.edit_calendar_rounded),
+                                    icon:
+                                        const Icon(Icons.edit_calendar_rounded),
                                   )
                                 ],
                               ),
@@ -178,14 +173,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             // Profile details
-                            Text(
+                            const Text(
                               'My Stories',
                               style: TextStyle(
                                 fontSize: 18.0,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            SizedBox(height: 8.0),
+                            const SizedBox(height: 8.0),
                             Container(
                               height: screenHeight(context) / 3.4,
                               child: ListView.builder(
@@ -198,7 +193,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             //TODO: Add a new story
                                           },
                                           child: Container(
-                                            margin: EdgeInsets.only(
+                                            margin: const EdgeInsets.only(
                                                 right: 8, bottom: 40),
                                             width: screenWidth(context) / 2.7,
                                             height: screenHeight(context) / 3.4,
@@ -235,7 +230,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           child: Stack(
                                             children: [
                                               Container(
-                                                margin: EdgeInsets.only(
+                                                margin: const EdgeInsets.only(
                                                     bottom: 40.0),
                                                 height: double.infinity,
                                                 width:
@@ -258,6 +253,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                 child: Center(
                                                   child: Container(
                                                     decoration: BoxDecoration(
+                                                      color: Colors.white,
                                                       shape: BoxShape.circle,
                                                       border: Border.all(
                                                           color: Colors.grey,
@@ -272,7 +268,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                       onPressed: () {
                                                         //TODO: delete the story
                                                       },
-                                                      icon: Icon(
+                                                      icon: const Icon(
                                                         Icons.close_rounded,
                                                         color: Colors.grey,
                                                         size: 30.0,
@@ -287,15 +283,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 },
                               ),
                             ),
-                            SizedBox(height: 16.0),
+                            const SizedBox(height: 16.0),
                             // **My about me section**
-                            Text('About Me',
+                            const Text('About Me',
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.w700,
                                 )),
 
-                            SizedBox(height: 8.0),
+                            const SizedBox(height: 8.0),
                             TextButton(
                               onPressed: () {
                                 //TODO: Navigate to the personal information screen
@@ -304,10 +300,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 children: [
                                   Icon(Icons.man_rounded, color: primaryColor),
 
-                                  SizedBox(
+                                  const SizedBox(
                                       width:
                                           8.0), // Add some spacing between icon and text
-                                  Expanded(
+                                  const Expanded(
                                     child: Text(
                                       'Personal informations',
                                       style: TextStyle(
@@ -324,10 +320,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 children: [
                                   Icon(Icons.person_pin_outlined,
                                       color: primaryColor),
-                                  SizedBox(
+                                  const SizedBox(
                                       width:
                                           8.0), // Add some spacing between icon and text
-                                  Expanded(
+                                  const Expanded(
                                       child: Text(
                                     'My identity',
                                     style: TextStyle(
@@ -343,10 +339,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 children: [
                                   Icon(Icons.star_half_outlined,
                                       color: primaryColor),
-                                  SizedBox(
+                                  const SizedBox(
                                       width:
                                           8.0), // Add some spacing between icon and text
-                                  Expanded(
+                                  const Expanded(
                                       child: Text(
                                     'Sendyo embassador',
                                     style: TextStyle(
@@ -362,10 +358,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 children: [
                                   Icon(Icons.person_pin_rounded,
                                       color: primaryColor),
-                                  SizedBox(
+                                  const SizedBox(
                                       width:
                                           8.0), // Add some spacing between icon and text
-                                  Expanded(
+                                  const Expanded(
                                       child: Text(
                                     'Account and security',
                                     style: TextStyle(
@@ -378,20 +374,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             // **End of the about me section**
 
                             // **My payments section**
-                            Text('Payments',
+                            const Text('Payments',
                                 style: TextStyle(
                                     fontSize: 18.0,
                                     fontWeight: FontWeight.w700)),
-                            SizedBox(height: 8.0),
+                            const SizedBox(height: 8.0),
                             TextButton(
                               onPressed: () {},
                               child: Row(
                                 children: [
                                   Icon(Icons.credit_card, color: primaryColor),
-                                  SizedBox(
+                                  const SizedBox(
                                       width:
                                           8.0), // Add some spacing between icon and text
-                                  Expanded(
+                                  const Expanded(
                                       child: Text(
                                     'Transfer options',
                                     style: TextStyle(
@@ -406,10 +402,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               child: Row(
                                 children: [
                                   Icon(Icons.money, color: primaryColor),
-                                  SizedBox(
+                                  const SizedBox(
                                       width:
                                           8.0), // Add some spacing between icon and text
-                                  Expanded(
+                                  const Expanded(
                                       child: Text(
                                     'Paiment methods',
                                     style: TextStyle(
@@ -424,10 +420,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               child: Row(
                                 children: [
                                   Icon(Icons.wallet, color: primaryColor),
-                                  SizedBox(
+                                  const SizedBox(
                                       width:
                                           8.0), // Add some spacing between icon and text
-                                  Expanded(
+                                  const Expanded(
                                       child: Text(
                                     'Wallet',
                                     style: TextStyle(
@@ -442,10 +438,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               child: Row(
                                 children: [
                                   svgIcon('assets/images/svg/MoneyGraph.svg'),
-                                  SizedBox(
+                                  const SizedBox(
                                       width:
                                           8.0), // Add some spacing between icon and text
-                                  Expanded(
+                                  const Expanded(
                                       child: Text(
                                     'Transaction history',
                                     style: TextStyle(
@@ -457,21 +453,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                             // **End of the payments section**
                             // **More section**
-                            Text('More',
+                            const Text('More',
                                 style: TextStyle(
                                     fontSize: 18.0,
                                     fontWeight: FontWeight.w700)),
-                            SizedBox(height: 8.0),
+                            const SizedBox(height: 8.0),
                             TextButton(
                               onPressed: () {},
                               child: Row(
                                 children: [
                                   Icon(Icons.error_outline,
                                       color: primaryColor),
-                                  SizedBox(
+                                  const SizedBox(
                                       width:
                                           8.0), // Add some spacing between icon and text
-                                  Expanded(
+                                  const Expanded(
                                       child: Text(
                                     'Notifications',
                                     style: TextStyle(
@@ -486,10 +482,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               child: Row(
                                 children: [
                                   Icon(Icons.help_outline, color: primaryColor),
-                                  SizedBox(
+                                  const SizedBox(
                                       width:
                                           8.0), // Add some spacing between icon and text
-                                  Expanded(
+                                  const Expanded(
                                       child: Text(
                                     'FAQ and help',
                                     style: TextStyle(
@@ -505,10 +501,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 children: [
                                   Icon(Icons.handyman_outlined,
                                       color: primaryColor),
-                                  SizedBox(
+                                  const SizedBox(
                                       width:
                                           8.0), // Add some spacing between icon and text
-                                  Expanded(
+                                  const Expanded(
                                       child: Text(
                                     'Terms and conditions',
                                     style: TextStyle(
@@ -523,10 +519,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               child: Row(
                                 children: [
                                   svgIcon('assets/images/svg/logout.svg'),
-                                  SizedBox(
+                                  const SizedBox(
                                       width:
                                           8.0), // Add some spacing between icon and text
-                                  Expanded(
+                                  const Expanded(
                                       child: Text(
                                     'Logout',
                                     style: TextStyle(
@@ -550,9 +546,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ],
       ),
       bottomNavigationBar: ConvexAppBar(
-        height: 80,
+        height: 60,
         onTap: _onItemTapped,
-        activeColor: Color(0xff133BB7),
+        activeColor: const Color(0xff133BB7),
         style: TabStyle.react,
         items: [
           TabItem(icon: sendIcon),
@@ -564,56 +560,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
         initialActiveIndex: _selectedIndex,
         backgroundColor: primaryColor,
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   backgroundColor: primaryColor, // Adjust color as needed
-      //   selectedItemColor: selectedNavTabBarColor,
-      //   unselectedItemColor: Colors.white,
-      //   type: BottomNavigationBarType.shifting, // This makes the icons animate
-      //   currentIndex:
-      //       _selectedIndex, // This will be updated when a new item is tapped
-      //   onTap: _onItemTapped, // Handles taps
-      //   items: [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.send),
-      //       label: 'Send',
-      //       backgroundColor: primaryColor, // This is needed for the animation
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.directions_car),
-      //       label: 'Transport',
-      //       backgroundColor: primaryColor, // This is needed for the animation
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.dashboard),
-      //       label: 'Dashboard',
-      //       backgroundColor: primaryColor, // This is needed for the animation
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.chat),
-      //       label: 'Chat',
-      //       backgroundColor: primaryColor, // This is needed for the animation
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.person),
-      //       label: 'Profile',
-      //       backgroundColor: primaryColor, // This is needed for the animation
-      //     ),
-      //   ],
-      // ),
-
-//----------------------------------
-
-      // bottomNavigationBar: CurvedNavigationBar(
-      //   backgroundColor: Colors.blueAccent,
-      //   items: <Widget>[
-      //     Icon(Icons.send),
-      //     Icon(Icons.directions_car),
-      //     Icon(Icons.dashboard),
-      //     Icon(Icons.chat),
-      //     Icon(Icons.person),
-      //   ],
-      //   onTap: _onItemTapped,
-      // ),
     );
   }
 }
